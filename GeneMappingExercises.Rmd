@@ -1,0 +1,58 @@
+---
+title: "Rockefeller advanced gene mapping course"
+author: "Matthew Moll"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+date: `r Sys.Date()`
+
+
+
+## R setup
+```{r setup}
+
+
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 6)
+
+library(tidyverse)
+library(data.table)
+library(knitr)
+library(readxl)
+library(epiR)
+library(e1071)
+
+
+```
+
+## Load data
+```{r load data}
+
+rm(list = ls())
+
+
+```
+
+## Day 1: GWAS, case/control and family-based studies
+
+### lecture 1: Heather cordell
+**General concepts**
+<BR>
+
+* GWAS case and controls - easier than family based studies. However, family may be more informative
+
+* May use population based controls for a rare disease, instead of matched, verified controls
+
+* Use X2 test to look for association.  
+
+* Can also do odds ratios: OR (2|2 : 1|1), OR (1|2: 1|1)
+
+* Can also calculate genotype relative risk
+
+* These tests can be done by alleles instead of genotypes as well
+
+* 
+
