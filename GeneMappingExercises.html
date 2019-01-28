@@ -339,8 +339,72 @@ library(epiR)</code></pre>
 <li><p>Can also do odds ratios: OR (2|2 : 1|1), OR (1|2: 1|1)</p></li>
 <li><p>Can also calculate genotype relative risk</p></li>
 <li><p>These tests can be done by alleles instead of genotypes as well</p></li>
-<li><p>Can also do logistic regression</p></li>
-<li></li>
+<li><p>Can also do logistic regression. Will compare to reference genotype so that 1/1 has OR of 1.</p>
+<p>1/1 = 0 1/2 = 1 2/2 = 2</p></li>
+<li><p>To model a dominant or rececessive model:</p>
+<p>Dominant- code 1/1 as 0, 1/2 and 2/2 as 1</p>
+<p>Recessive - code 1/1 as 0, 1/2 as 0, and 2/2 as 1</p></li>
+<li><p>manhattan plot - want to show -log(p value) so that higher values are more important (lower p-value)</p></li>
+<li><p>p-value threshold usually around 5 X 10^-8</p></li>
+<li><p>need to have replication in external cohort</p></li>
+<li><p>QC</p>
+<ul>
+<li><p>stringent QC checks needed</p></li>
+<li>Discard if:
+<ul>
+<li>low call rates</li>
+<li>excess heterozygosity</li>
+<li>X chr markers useful for gecking gender (males look homozygous for X)</li>
+<li>Check relationships and ethnicity</li>
+</ul></li>
+<li>Dischard if SNPs deemed unreliable
+<ul>
+<li>basis of call rates, mendelian misinheritances, HW disequilibrium</li>
+<li>low minor allele frequency</li>
+</ul></li>
+<li><p>Make plot of call rates vs heterozygosity to find outliers</p></li>
+<li><p>Ethnicity tests - multidimensional scaling (210 HapMap individuals) to find individuals with non-Caucasion ancestry -helps to get homogeneous population if exclude outlier samples</p></li>
+<li>Full vs half sibs
+<ul>
+<li>mean vs. standard error plots</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><BR></p>
+</div>
+<div id="lecture-2-leal-qc-continued" class="section level3">
+<h3>Lecture 2: Leal: QC continued</h3>
+<p><BR></p>
+<ul>
+<li><p>Genotyping</p>
+<ul>
+<li>check frequencies for all variant types in cases and controls, and batches to make sure no artifact</li>
+<li>be very suspicious of one highly associated SNP without other SNPs nearby in LD being associated</li>
+<li>remove individuals with &gt; 3% of genotypes. Then remove markers with &gt; 5% missing genotypes.
+<ul>
+<li>then amongst markers with maf &lt; 5%, remove if &gt;1% of genotypes missing</li>
+</ul></li>
+<li>check for double recombination based on genotype distances - use Merlin for family data</li>
+<li>check for non-mendelian errors of segregation - use Pedcheck for family data</li>
+</ul></li>
+</ul>
+<p><BR></p>
+<ul>
+<li><p>Data cleaning</p>
+<ul>
+<li>double check sex - true males will have homozygosity of X chr
+<ul>
+<li>if sex is mislabelled, best to assume this was a mislabelled sample, and remove this individual altogether</li>
+</ul></li>
+<li>Look for cross contamination = cluster together in pca</li>
+<li>check for duplicate and related individuals and remove.
+<ul>
+<li>cryptic duplicates - DNA smaple aliquoted more than once, or individual enrolled twice in study</li>
+<li>related individuals recruited to study</li>
+</ul></li>
+<li>PLINK or KING can be used to look for cryptic relatives</li>
+<li>PCA/MDS analysis to look for related individuals and outliers, as well as how well clusters separate</li>
+</ul></li>
 </ul>
 </div>
 </div>
