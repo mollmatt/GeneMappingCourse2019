@@ -36,9 +36,14 @@ rm(list = ls())
 
 ```
 
-## Day 1: GWAS, case/control and family-based studies
+# Day 1: 
+
+##GWAS, case/control and family-based studies
 
 ### lecture 1: Heather cordell
+
+<BR>
+
 **General concepts**
 <BR>
 
