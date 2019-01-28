@@ -54,5 +54,7 @@ rm(list = ls())
 
 * These tests can be done by alleles instead of genotypes as well
 
+* Can also do logistic regression
+
 * 
 
